@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--<script>-->
+        <!--delete window.require;-->
+        <!--delete window.exports;-->
+        <!--delete window.module;-->
+        <!--const remote = window.nodeRequire('electron').remote;-->
+        <!--remote.require('./index.js');-->
+        <!--// window.nodeRequire = require;-->
+        <!--// window.nodeRequire('index.js');-->
+    <!--</script>-->
+    <meta charset="UTF-8">
+    <title>基于人脸识别的智能会议室管理系统</title>
+    <script src="./js/jquery-2.1.1.js"></script>
+    <script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mms-index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="component/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <style type="text/css">-->
+        <!--/*@import "css/mms-index.css";*/-->
+        <!--/*@import "css/bootstrap.css";*/-->
+        <!--/*@import "component/font-awesome/css/font-awesome.css";*/-->
+        <!--/*@import "component/ladda/ladda-themeless.min.css";*/-->
+        <!--/*@import "css/animate.css";*/-->
+        <!--/*@import "css/style.css";*/-->
+    <!--</style> -->
+    <style>
+        #alertMsg {
+            display: none;
+        }
+    </style>
+</head>
+        <body class="top-navigation">
+                <div id="alertMsg" class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert"
+                                aria-hidden="true">
+                            &times;
+                        </button>
+                        错误！请进行一些更改。
+                </div>
+
+                <div id="wrapper">
+                    <div id="page-wrapper" class="gray-bg">
+                            
+                    <!-- <div class="row border-bottom white-bg"> -->
+                    <nav class="navbar navbar-static-top" role="navigation">
+                        <div class="navbar-header">
+                            <!-- <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                                <i class="fa fa-reorder"></i>
+                            </button> -->
+                            <!-- <a href="#" class="navbar-brand">基于人脸识别的智能会议室管理系统</a> -->
+                        <div class="text">基于人脸识别的智能会议室管理系统</div>
+                        </div>
+                        <!-- <div class="navbar-collapse collapse" id="navbar"> -->
+                            <!-- <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a aria-expanded="false" role="button" href="layouts.html"> 返回主布局页面 </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 菜单 <span class="caret"></span></a>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                        <li><a href="">菜单</a></li>
+                                    </ul>
+                                </li>
+            
+                            </ul> -->
+                            <!-- <ul class="nav navbar-top-links navbar-right">
+                                <li>
+                                    <a href="login.html">
+                                        <i class="fa fa-sign-out"></i> 注销
+                                    </a>
+                                </li>
+                            </ul> -->
+                        <!-- </div> -->
+                    </nav>
+                    <!-- </div> -->
+                    <div class="wrapper wrapper-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <div class="ibox float-e-margins">
+                                        <div class="ibox-content">
+                                       
+                                                <div class="ibox-content ibox-heading">
+                                                        <h3>当前会议室占用情况如下</h3>
+                                                        <small><i class="fa fa-map-marker"></i> 登陆以查看详细信息。</small>
+                                                    </div>
+                                                    <div class="ibox-content inspinia-timeline">
+                    
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-briefcase"></i>
+                                                                    6:00
+                                                                    <br/>
+                                                                    <small class="text-navy">2小时前</small>
+                                                                </div>
+                                                                <div class="col-xs-7 content no-top-border">
+                                                                    <p class="m-b-xs"><strong>会议室占用两小时</strong></p>
+                    
+                                                                    <!-- <p>人生如一本书，应该多一些精彩的细节，少一些乏味的字眼。</p> -->
+                    
+                                                                    <!-- <p><span data-diameter="40" class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3</span></p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-file-text"></i>
+                                                                    7:00
+                                                                    <br/>
+                                                                    <small class="text-navy">3小时前</small>
+                                                                </div>
+                                                                <div class="col-xs-7 content">
+                                                                    <p class="m-b-xs"><strong>会议室占用一小时</strong></p>
+                                                                    <!-- <p>人生如一局棋，应该多一些主动的出击，少一些消极的退缩。</p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-coffee"></i>
+                                                                    8:00
+                                                                    <br/>
+                                                                </div>
+                                                                <div class="col-xs-7 content">
+                                                                    <p class="m-b-xs"><strong>会议室占用两小时</strong></p>
+                                                                    <!-- <p>
+                                                                        人生如一首诗，应该多一些悠扬的抒情，少一些愁苦的叹息。
+                                                                    </p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-phone"></i>
+                                                                    11:00
+                                                                    <br/>
+                                                                    <small class="text-navy">21小时前</small>
+                                                                </div>
+                                                                <div class="col-xs-7 content">
+                                                                    <p class="m-b-xs"><strong>会议预定半小时</strong></p>
+                                                                    <!-- <p>
+                                                                        人生如一幅画，应该多一些亮丽的着色，少一些灰色的基调。
+                                                                    </p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-user-md"></i>
+                                                                    09:00
+                                                                    <br/>
+                                                                    <small>21小时前</small>
+                                                                </div>
+                                                                <div class="col-xs-7 content">
+                                                                    <p class="m-b-xs"><strong>会议预定</strong></p>
+                                                                    <!-- <p>
+                                                                        人生如一支歌，应该多一些昂扬的吟唱，少一些哀婉的咏叹。
+                                                                    </p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="timeline-item">
+                                                            <div class="row">
+                                                                <div class="col-xs-3 date">
+                                                                    <i class="fa fa-comments"></i>
+                                                                    12:50
+                                                                    <br/>
+                                                                    <small class="text-navy">48小时前</small>
+                                                                </div>
+                                                                <div class="col-xs-7 content">
+                                                                    <p class="m-b-xs"><strong>会议预定</strong></p>
+                                                                    <!-- <p>
+                                                                        人生犹如石材，在上面雕刻神或是魔鬼，那是各人的自由。
+                                                                    </p> -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                    
+                                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="ibox float-e-margins">
+                                        <div class="ibox-title">
+                                            <!-- <span class="label label-warning pull-right">数据发生变化</span> -->
+                                            <!-- <h5>用户活动</h5> -->
+                                        </div>
+                                        <div class="ibox-content">
+                                            <button id="faceLoginButton" class="btn btn-primary " type="button"><i class="fa fa-check"></i>&nbsp;刷脸登陆</button>
+                                        </div>
+                                        <div class="ibox-content"></div>
+                                        <div class="ibox-content">
+                                            <button id="bookMeetingBtn" class="btn btn-primary " type="button"><i class="fa fa-check"></i>&nbsp;会议预定</button>
+                                        </div>
+                                        <div class="ibox-content"> </div>
+                                        <div class="ibox-content">
+                                            <button class="btn btn-primary " type="button"><i class="fa fa-check"></i>&nbsp;会议签到</button>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="footer">
+                        <div class="pull-right">
+                            <strong>108wan.Com</strong>
+                        </div>
+                        <div>
+                            <strong>Copyright</strong>王皓月 &copy; 2019
+                        </div>
+                    </div>
+            
+                    </div>
+                    </div>
+                    <!-- <button id="faceLoginButton" class="ladda-button btn btn-warning" data-style="contract">刷脸登陆</button> -->
+
+<!--<script src="component/metisMenu/jquery.metisMenu.js"></script>-->
+<!--<script src="component/slimscroll/jquery.slimscroll.min.js"></script>-->
+<!--<script src="js/inspinia.js"></script>-->
+<!--<script src="component/pace/pace.min.js"></script>-->
+<!--<script src="component/ladda/spin.min.js"></script>-->
+<!--<script src="component/ladda/ladda.min.js"></script>-->
+<!--<script src="component/ladda/ladda.jquery.min.js"></script>-->
+
+<!-- <script src="./js/jquery-2.1.1.js"></script> -->
+<!-- <script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script> -->
+    
+<script type="text/javascript">
+    // window.$ = window.jQuery = require('./js/main/jquery-3.2.0.min.js');
+
+    require('./index.js');
+</script>
+</body>
+</html>

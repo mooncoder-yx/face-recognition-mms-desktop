@@ -1,0 +1,13 @@
+{
+  "name": "face-recognition-mms-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Wang, Haoyue",
+  "devDependencies": {
+    "electron": "^4.0.3",
+    "jquery": "^3.3.1"
+  }
+}
