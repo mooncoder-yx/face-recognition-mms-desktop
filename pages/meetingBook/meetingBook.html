@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>会议预定</title>
+
+    <link rel="stylesheet" type="text/css" href="../../css/mms-index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../component/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">王宇</strong>
+                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span> </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">个人信息</a></li>
+                                <li><a href="contacts.html">好友</a></li>
+                                <li><a href="mailbox.html">信箱</a></li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">登出</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">会议预定</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">会议签到</span><span class="fa arrow"></span></a>
+                    </li>
+                    <li>
+                        <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">会议室预定 </span><span class="label label-warning pull-right">16/24</span></a>
+                        <!-- <ul class="nav nav-second-level collapse">
+                            <li><a href="mailbox.html">收件箱</a></li>
+                            <li><a href="mail_detail.html">邮件内容</a></li>
+                            <li><a href="mail_compose.html">撰写邮件</a></li>
+                            <li><a href="email_template.html">邮件模板</a></li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">会议修改</span>  </a>
+                    </li>
+                    <li>
+                        <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">窗口小部件</span></a>
+                    </li>
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+            <!-- <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="form-group">
+                    <input type="text" placeholder="请输入搜索内容" class="form-control" name="top-search" id="top-search">
+                </div>
+            </form> -->
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">欢迎</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                </a>
+                                <div class="media-body">
+                                    <small class="pull-right">46小时前</small>
+                                    <strong>小明</strong> 评论了 <strong>小红</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">5小时前</small>
+                                    <strong>小红</strong> 打电话给了 <strong>小黑</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right">23小时前</small>
+                                    <strong>小黑</strong> 点赞了 <strong>小红</strong>. <br>
+                                    <small class="text-muted">2017.10.06 7:58</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
+                                    <i class="fa fa-envelope"></i> <strong>阅读所有消息</strong>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 你有16条消息
+                                    <span class="pull-right text-muted small">4 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 个新的关注者
+                                    <span class="pull-right text-muted small">12 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> 重启服务器
+                                    <span class="pull-right text-muted small">4 分钟前</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>查看所有信息</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#" id="indexHtml">
+                        <i class="fa fa-sign-out"></i> 注销
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>请选择您要预定的会议信息</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <!-- <a href="#" id="indexHtml">主页</a> -->
+                        <a>主页</a>
+                    </li>
+                    <!-- <li>
+                        <a>应用</a>
+                    </li> -->
+                    <li class="active">
+                        <strong>会议预定</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="wrapper wrapper-content">
+            <div class="row animated fadeInRight">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>日期选择器 <small> </small></h5>
+                            <div class="ibox-tools">
+                                <a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">选项 1</a>
+                                    </li>
+                                    <li><a href="#">选项 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <h3>
+                                日期选择器
+                            </h3>
+                            <p>
+                                使用鼠标轻松选择文字输入的时间。
+                            </p>
+
+                            <div class="form-group" id="data_2">
+                                <!-- <label class="font-normal">今年</label> -->
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="18/02/2019">
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                <strong>www.108wan.com</strong>
+            </div>
+            <div>
+                <strong>Copyright</strong> 王皓月 &copy; 2019
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+
+
+  <!-- Mainly scripts -->
+  <script src="../../js/jquery-2.1.1.js"></script>
+  <script>if (typeof module === 'object') {window.jQuery = window.$ = module.exports;};</script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <!-- <script src="js/jquery-3.1.1.min.js"></script> -->
+  
+  <!-- Custom and plugin javascript -->
+  <script src="../../js/inspinia.js"></script>
+  <script src="../../js/plugins/pace/pace.min.js"></script>
+  <script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+  <!-- Chosen -->
+  <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+ <!-- JSKnob -->
+ <script src="js/plugins/jsKnob/jquery.knob.js"></script>
+
+ <!-- Input Mask-->
+  <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+ <!-- Data picker -->
+ <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+ <!-- NouSlider -->
+ <script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
+
+ <!-- Switchery -->
+ <script src="js/plugins/switchery/switchery.js"></script>
+
+  <!-- IonRangeSlider -->
+  <script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+
+  <!-- iCheck -->
+  <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+  <!-- MENU -->
+  <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+  <!-- Color picker -->
+  <script src="js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+
+  <!-- Clock picker -->
+  <script src="js/plugins/clockpicker/clockpicker.js"></script>
+
+  <!-- Image cropper -->
+  <script src="js/plugins/cropper/cropper.min.js"></script>
+
+  <!-- Date range use moment.js same as full calendar plugin -->
+  <script src="js/plugins/fullcalendar/moment.min.js"></script>
+
+  <!-- Date range picker -->
+  <script src="../../js/plugins/daterangepicker/daterangepicker.js"></script>
+
+  <!-- Select2 -->
+  <script src="js/plugins/select2/select2.full.min.js"></script>
+
+  <!-- TouchSpin -->
+  <script src="js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+  <!-- Tags Input -->
+  <script src="js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+  <!-- Dual Listbox -->
+  <script src="js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
+
+  <script>
+      $(document).ready(function(){
+
+          $('.tagsinput').tagsinput({
+              tagClass: 'label label-primary'
+          });
+
+          var $image = $(".image-crop > img")
+          $($image).cropper({
+              aspectRatio: 1.618,
+              preview: ".img-preview",
+              done: function(data) {
+                  // Output the result data for cropping image.
+              }
+          });
+
+          var $inputImage = $("#inputImage");
+          if (window.FileReader) {
+              $inputImage.change(function() {
+                  var fileReader = new FileReader(),
+                          files = this.files,
+                          file;
+
+                  if (!files.length) {
+                      return;
+                  }
+
+                  file = files[0];
+
+                  if (/^image\/\w+$/.test(file.type)) {
+                      fileReader.readAsDataURL(file);
+                      fileReader.onload = function () {
+                          $inputImage.val("");
+                          $image.cropper("reset", true).cropper("replace", this.result);
+                      };
+                  } else {
+                      showMessage("请选择一个图像文件。");
+                  }
+              });
+          } else {
+              $inputImage.addClass("hide");
+          }
+
+          $("#download").click(function() {
+              window.open($image.cropper("getDataURL"));
+          });
+
+          $("#zoomIn").click(function() {
+              $image.cropper("zoom", 0.1);
+          });
+
+          $("#zoomOut").click(function() {
+              $image.cropper("zoom", -0.1);
+          });
+
+          $("#rotateLeft").click(function() {
+              $image.cropper("rotate", 45);
+          });
+
+          $("#rotateRight").click(function() {
+              $image.cropper("rotate", -45);
+          });
+
+          $("#setDrag").click(function() {
+              $image.cropper("setDragMode", "crop");
+          });
+
+          $('#data_1 .input-group.date').datepicker({
+              todayBtn: "linked",
+              keyboardNavigation: false,
+              forceParse: false,
+              calendarWeeks: true,
+              autoclose: true
+          });
+
+          $('#data_2 .input-group.date').datepicker({
+              startView: 1,
+              todayBtn: "linked",
+              keyboardNavigation: false,
+              forceParse: false,
+              autoclose: true,
+              format: "yyyy/dd/mm"
+          });
+
+          $('#data_3 .input-group.date').datepicker({
+              startView: 2,
+              todayBtn: "linked",
+              keyboardNavigation: false,
+              forceParse: false,
+              autoclose: true
+          });
+
+          $('#data_4 .input-group.date').datepicker({
+              minViewMode: 1,
+              keyboardNavigation: false,
+              forceParse: false,
+              forceParse: false,
+              autoclose: true,
+              todayHighlight: true
+          });
+
+          $('#data_5 .input-daterange').datepicker({
+              keyboardNavigation: false,
+              forceParse: false,
+              autoclose: true
+          });
+
+          var elem = document.querySelector('.js-switch');
+          var switchery = new Switchery(elem, { color: '#1AB394' });
+
+          var elem_2 = document.querySelector('.js-switch_2');
+          var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+          var elem_3 = document.querySelector('.js-switch_3');
+          var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+          var elem_4 = document.querySelector('.js-switch_4');
+          var switchery_4 = new Switchery(elem_4, { color: '#f8ac59' });
+              switchery_4.disable();
+
+          $('.i-checks').iCheck({
+              checkboxClass: 'icheckbox_square-green',
+              radioClass: 'iradio_square-green'
+          });
+
+          $('.demo1').colorpicker();
+
+          var divStyle = $('.back-change')[0].style;
+          $('#demo_apidemo').colorpicker({
+              color: divStyle.backgroundColor
+          }).on('changeColor', function(ev) {
+                      divStyle.backgroundColor = ev.color.toHex();
+                  });
+
+          $('.clockpicker').clockpicker();
+
+          $('input[name="daterange"]').daterangepicker();
+
+          $('#reportrange span').html(moment().subtract(29, 'days').format('YYYY,D MMMM') + ' - ' + moment().format('YYYY,D MMMM'));
+
+          $('#reportrange').daterangepicker({
+              format: 'YYYY/DD/MM',
+              startDate: moment().subtract(29, 'days'),
+              endDate: moment(),
+              minDate: '2012/01/01',
+              maxDate: '2015/12/31',
+              dateLimit: { days: 60 },
+              showDropdowns: true,
+              showWeekNumbers: true,
+              timePicker: false,
+              timePickerIncrement: 1,
+              timePicker12Hour: true,
+              ranges: {
+                  '今天': [moment(), moment()],
+                  '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                  '最近7天': [moment().subtract(6, 'days'), moment()],
+                  '最近30天': [moment().subtract(29, 'days'), moment()],
+                  '本月': [moment().startOf('month'), moment().endOf('month')],
+                  '上月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+              },
+              opens: 'right',
+              drops: 'down',
+              buttonClasses: ['btn', 'btn-sm'],
+              applyClass: 'btn-primary',
+              cancelClass: 'btn-default',
+              separator: ' 至 ',
+              locale: {
+                  applyLabel: '提交',
+                  cancelLabel: '取消',
+                  fromLabel: '从',
+                  toLabel: '至',
+                  customRangeLabel: '习俗',
+                  daysOfWeek: ['日', '一', '二', '三', '四', '五','六'],
+                  monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                  firstDay: 1
+              }
+          }, function(start, end, label) {
+              console.log(start.toISOString(), end.toISOString(), label);
+              $('#reportrange span').html(start.format('YYYY,D MMMM') + ' - ' + end.format('YYYY,D MMMM'));
+          });
+
+          $(".select2_demo_1").select2();
+          $(".select2_demo_2").select2();
+          $(".select2_demo_3").select2({
+              placeholder: "选择一个状态",
+              allowClear: true
+          });
+
+
+          $(".touchspin1").TouchSpin({
+              buttondown_class: 'btn btn-white',
+              buttonup_class: 'btn btn-white'
+          });
+
+          $(".touchspin2").TouchSpin({
+              min: 0,
+              max: 100,
+              step: 0.1,
+              decimals: 2,
+              boostat: 5,
+              maxboostedstep: 10,
+              postfix: '%',
+              buttondown_class: 'btn btn-white',
+              buttonup_class: 'btn btn-white'
+          });
+
+          $(".touchspin3").TouchSpin({
+              verticalbuttons: true,
+              buttondown_class: 'btn btn-white',
+              buttonup_class: 'btn btn-white'
+          });
+
+          $('.dual_select').bootstrapDualListbox({
+              selectorMinimalHeight: 160
+          });
+
+
+      });
+
+      $('.chosen-select').chosen({width: "100%"});
+
+      $("#ionrange_1").ionRangeSlider({
+          min: 0,
+          max: 5000,
+          type: 'double',
+          prefix: "$",
+          maxPostfix: "+",
+          prettify: false,
+          hasGrid: true
+      });
+
+      $("#ionrange_2").ionRangeSlider({
+          min: 0,
+          max: 10,
+          type: 'single',
+          step: 0.1,
+          postfix: "克拉",
+          prettify: false,
+          hasGrid: true
+      });
+
+      $("#ionrange_3").ionRangeSlider({
+          min: -50,
+          max: 50,
+          from: 0,
+          postfix: "值",
+          prettify: false,
+          hasGrid: true
+      });
+
+      $("#ionrange_4").ionRangeSlider({
+          values: [
+              "一月", "二月", "三月",
+              "四月", "五月", "六月",
+              "七月", "八月", "九月",
+              "十月", "十一月", "十二月"
+          ],
+          type: 'single',
+          hasGrid: true
+      });
+
+      $("#ionrange_5").ionRangeSlider({
+          min: 10000,
+          max: 100000,
+          step: 100,
+          postfix: " km",
+          from: 55000,
+          hideMinMax: true,
+          hideFromTo: false
+      });
+
+      $(".dial").knob();
+
+      var basic_slider = document.getElementById('basic_slider');
+
+      noUiSlider.create(basic_slider, {
+          start: 40,
+          behaviour: 'tap',
+          connect: 'upper',
+          range: {
+              'min':  20,
+              'max':  80
+          }
+      });
+
+      var range_slider = document.getElementById('range_slider');
+
+      noUiSlider.create(range_slider, {
+          start: [ 40, 60 ],
+          behaviour: 'drag',
+          connect: true,
+          range: {
+              'min':  20,
+              'max':  80
+          }
+      });
+
+      var drag_fixed = document.getElementById('drag-fixed');
+
+      noUiSlider.create(drag_fixed, {
+          start: [ 40, 60 ],
+          behaviour: 'drag-fixed',
+          connect: true,
+          range: {
+              'min':  20,
+              'max':  80
+          }
+      });
+
+
+  </script>
+
+    <script type="text/javascript">
+        require('./meetingBook.js')
+    </script>
+</body>
+
+</html>

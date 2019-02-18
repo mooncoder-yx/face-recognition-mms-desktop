@@ -3,17 +3,23 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 // 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
 // 垃圾回收的时候，window对象将会自动的关闭
 let win;
+let faceLoginWindow;
 
 function createWindow () {
     // 创建浏览器窗口。
     let mainWindow = new BrowserWindow({
         width: 900,
-        height: 600
+        height: 600,
+        //隐藏菜单栏，ALT显示
+        // autoHideMenuBar: true
     });
-    // 然后加载应用的 index.html。
-    mainWindow.loadFile('index.html');
+    // 然后加载应用的 index.html
+    mainWindow.loadFile('./pages/index/index.html');
     // 打开开发者工具
     mainWindow.webContents.openDevTools();
+    //设置不显示菜单栏
+    mainWindow.setMenu(null);
+
 
     /*
     let faceLoginWindow = new BrowserWindow({
@@ -25,31 +31,33 @@ function createWindow () {
     faceLoginWindow.loadFile('faceLogin.html');
     faceLoginWindow.webContents.openDevTools();
     //监听faceLogin，当接收到新的消息时，方法得到执行
-    ipcMain.on('faceLogin', function () {
+    ipcMain.on('faceLogin', function (event) {
         faceLoginWindow.show();
         mainWindow.hide();
+        event.sender.send('startTrack', 'start');
         // faceLoginWindow.on('closed',()=>{faceLoginWindow = null});
-        var closeFaceloginWin = setTimeout(function(){
-            faceLoginWindow.hide();
-            mainWindow.show();
-        },5000);
+        // var closeFaceloginWin = setTimeout(function(){
+        //     faceLoginWindow.hide();
+        //     mainWindow.show();
+        // },5000);
         // faceLoginWindow.show();
         // mainWindow.hide();
     });
-    */
+    */    
 
-   let faceLoginWindow;
-
+//    /*
     //监听faceLogin，当接收到新的消息时，方法得到执行
     ipcMain.on('faceLogin', function () {
         faceLoginWindow = new BrowserWindow({
             weight: 800,
             height: 600,
             // show: false
-            parent: mainWindow
+            parent: mainWindow,
+            autoHideMenuBar: true
         });
-        faceLoginWindow.loadFile('faceLogin.html');
+        faceLoginWindow.loadFile('./pages/faceLogin/faceLogin.html');
         faceLoginWindow.webContents.openDevTools();
+        faceLoginWindow.setMenu(null);
         mainWindow.hide();
         // faceLoginWindow.on('closed',()=>{faceLoginWindow = null});
         // var closeFaceloginWin = setTimeout(function(){
@@ -60,6 +68,7 @@ function createWindow () {
         // mainWindow.hide();
        
     });
+    // */
 
     ipcMain.on('userLoginPost', (event, snapeData) => {
         // 引入 request模块
@@ -105,8 +114,12 @@ function createWindow () {
     })
   
     ipcMain.on('bookMeeting', () => {
-        mainWindow.loadFile('dashboard.html');
+        mainWindow.loadFile('./pages/meetingBook/meetingBook.html');
         mainWindow.webContents.openDevTools();
+    })
+
+    ipcMain.on('returnIndex', () => {
+        mainWindow.loadFile('./pages/index/index.html');
     })
 }
 
